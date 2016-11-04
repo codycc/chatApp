@@ -10,17 +10,18 @@ import UIKit
 
 class LoginVC: UIViewController {
 
+    @IBOutlet weak var anonymousButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       //anonymous properties
+        //set border color and bc width
+        anonymousButton.layer.borderWidth = 2.0
+        anonymousButton.layer.borderColor = UIColor.white.cgColor
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+ 
     @IBAction func loginAnonymouslyTapped(_ sender: Any) {
         print("login anonymously tapped")
     }
