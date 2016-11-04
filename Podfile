@@ -6,6 +6,7 @@ target 'chatApp' do
   use_frameworks!
   pod 'Firebase'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
   # Pods for chatApp
 
 end

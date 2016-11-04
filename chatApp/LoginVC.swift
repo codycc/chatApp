@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleSignIn
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
 
     @IBOutlet weak var anonymousButton: UIButton!
     
@@ -19,30 +20,30 @@ class LoginVC: UIViewController {
         //set border color and bc width
         anonymousButton.layer.borderWidth = 2.0
         anonymousButton.layer.borderColor = UIColor.white.cgColor
+        
+        GIDSignIn.sharedInstance().clientID = "903282249025-sevjrubfidbtuoli7h9ea0vckkeetr72.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
     }
 
  
     @IBAction func loginAnonymouslyTapped(_ sender: Any) {
         print("login anonymously tapped")
         Helper.helper.loginAnonymously()
-        
     }
 
     @IBAction func googleLoginTapped(_ sender: Any) {
         print("google login tapped ")
-        //switch view by setting navigation controller as root view controller
-        
-        //Create a main storyboard instance
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        //From main storboard instantiate a navigation controller
-        let naviVC = storyboard.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
-        //get the app gelegate
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        // set navigation controller as root view controller
-        appDelegate.window?.rootViewController = naviVC
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if error != nil {
+            print("\(error.localizedDescription)")
+            return 
+        }
+        print(user.authentication)
+        Helper.helper.loginWithGoogle(authentication:user.authentication)
     }
     /*
     // MARK: - Navigation
