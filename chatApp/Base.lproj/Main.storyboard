@@ -21,24 +21,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wZ-cX-pq2">
-                                <rect key="frame" x="115" y="227" width="144" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1439694458393-78ecf14da7f9.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="fce-FQ-iHT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="en6-Bg-kIe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login Anonymously"/>
-                                <connections>
-                                    <action selector="loginAnonymouslyTapped:" destination="OHL-Mm-y3y" eventType="touchUpInside" id="5hf-lK-Tbz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nom-Iw-0Ng">
-                                <rect key="frame" x="115" y="290" width="144" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="google Login"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkM-7N-yNi">
+                                <rect key="frame" x="166" y="301" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0zD-yN-AMh"/>
+                                    <constraint firstAttribute="width" constant="42" id="OI9-d4-rZm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nom-Iw-0Ng">
+                                <rect key="frame" x="155" y="348" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="C1e-4j-xTG"/>
+                                    <constraint firstAttribute="width" constant="65" id="bZv-vE-BfY"/>
+                                </constraints>
+                                <state key="normal" image="google-plus-3-xxl.png"/>
                                 <connections>
                                     <action selector="googleLoginTapped:" destination="OHL-Mm-y3y" eventType="touchUpInside" id="HhT-Zg-t2g"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wZ-cX-pq2">
+                                <rect key="frame" x="44" y="244" width="287" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9Pt-kS-TIL"/>
+                                    <constraint firstAttribute="width" constant="287" id="dJw-qv-rlA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                <state key="normal" title="Login Anonymously">
+                                    <color key="titleColor" red="0.97908334703939814" green="1" blue="0.99585148203602059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginAnonymouslyTapped:" destination="OHL-Mm-y3y" eventType="touchUpInside" id="5hf-lK-Tbz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fkM-7N-yNi" firstAttribute="top" secondItem="1wZ-cX-pq2" secondAttribute="bottom" constant="17" id="3yL-K0-DUf"/>
+                            <constraint firstItem="fkM-7N-yNi" firstAttribute="centerX" secondItem="8N9-7y-eJ5" secondAttribute="centerX" id="6IY-XE-vxd"/>
+                            <constraint firstItem="fce-FQ-iHT" firstAttribute="leading" secondItem="8N9-7y-eJ5" secondAttribute="leading" id="8vV-Un-a4X"/>
+                            <constraint firstItem="fce-FQ-iHT" firstAttribute="top" secondItem="8N9-7y-eJ5" secondAttribute="top" id="JGe-vb-AyB"/>
+                            <constraint firstAttribute="trailing" secondItem="fce-FQ-iHT" secondAttribute="trailing" id="Lu7-Du-0lM"/>
+                            <constraint firstItem="1wZ-cX-pq2" firstAttribute="centerX" secondItem="8N9-7y-eJ5" secondAttribute="centerX" id="XEy-uM-e5r"/>
+                            <constraint firstItem="nom-Iw-0Ng" firstAttribute="top" secondItem="fkM-7N-yNi" secondAttribute="bottom" constant="26" id="Zsm-M9-qgX"/>
+                            <constraint firstItem="nom-Iw-0Ng" firstAttribute="centerX" secondItem="8N9-7y-eJ5" secondAttribute="centerX" id="cJN-U0-H8n"/>
+                            <constraint firstItem="yLk-UE-mav" firstAttribute="top" secondItem="fce-FQ-iHT" secondAttribute="bottom" id="p69-vA-wmK"/>
+                            <constraint firstItem="1wZ-cX-pq2" firstAttribute="top" secondItem="KpS-z7-zCe" secondAttribute="bottom" constant="224" id="sC1-a8-Btb"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0GV-tO-aX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -64,4 +103,8 @@
             <point key="canvasLocation" x="961" y="160"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="google-plus-3-xxl.png" width="256" height="256"/>
+        <image name="photo-1439694458393-78ecf14da7f9.jpeg" width="4608" height="3072"/>
+    </resources>
 </document>
