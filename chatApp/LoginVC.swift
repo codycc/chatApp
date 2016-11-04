@@ -24,10 +24,25 @@ class LoginVC: UIViewController {
  
     @IBAction func loginAnonymouslyTapped(_ sender: Any) {
         print("login anonymously tapped")
+        Helper.helper.loginAnonymously()
+        
     }
 
     @IBAction func googleLoginTapped(_ sender: Any) {
         print("google login tapped ")
+        //switch view by setting navigation controller as root view controller
+        
+        //Create a main storyboard instance
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        //From main storboard instantiate a navigation controller
+        let naviVC = storyboard.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
+        //get the app gelegate
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        // set navigation controller as root view controller
+        appDelegate.window?.rootViewController = naviVC
     }
     /*
     // MARK: - Navigation
