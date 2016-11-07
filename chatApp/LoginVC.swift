@@ -21,7 +21,7 @@ class LoginVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
         anonymousButton.layer.borderWidth = 2.0
         anonymousButton.layer.borderColor = UIColor.white.cgColor
         
-        GIDSignIn.sharedInstance().clientID = "903282249025-sevjrubfidbtuoli7h9ea0vckkeetr72.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = CLIENT_ID
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
     }
